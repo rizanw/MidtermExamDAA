@@ -7,7 +7,10 @@ class DAA1Test extends DAA1 {
         Pohon pohon = arrayKePohon(new
 //                int[] {1, 9 ,2, 4, 0, 2, 9, 3, 0, 2, 4, 5, 6}
 //                int[] {41, 20, 11, 29, 32, 65, 50, 91, 72, 99}
-                int[] {1, 2, 3, 4}
+//                int[] {1, 2, 3, 4}
+//                int[] { 2,3,5,5,7,8 }
+//                int [] {8, 3, 1, 6, 4, 7, 10, 14, 13}
+                int[] {4, 2, 5, 1, 3}
         );
 
         cetak("pohon asli: Array ke Pohon", pohon);
@@ -75,10 +78,13 @@ class DAA1Test extends DAA1 {
 
     private static Pohon sisipkan(int n, Pohon p) {
         if (p.adalahKosong()) {
+//            System.out.println("kosong " + n);
             return new Pohon(n, new Pohon(), new Pohon());
         } else if (n <= p.nilai()) {
+//            System.out.println("nilai: "+n);
             return new Pohon(p.nilai(), sisipkan(n, p.kiri()), p.kanan());
         } else {
+//            System.out.println("else " + n);
             return new Pohon(p.nilai(), p.kiri(), sisipkan(n, p.kanan()));
         }
     }

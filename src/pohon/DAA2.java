@@ -14,6 +14,13 @@ class DAA2 extends DAA1 {
 	// Write your codes in here
         //...
         // Write your codes in here
+        
+        if(p == null) return true;
+        
+        if(Math.abs(tinggi(p.kiri)-tinggi(p.kanan)) <= 1 && adalahTinggiSeimbang(p.kiri) && adalahTinggiSeimbang(p.kanan)) return true;
+        
+        return false;
+        
     }
     
     // 6. sisipkanTinggiSeimbang() [20 points]
@@ -21,6 +28,15 @@ class DAA2 extends DAA1 {
 	// Write your codes in here
         //...
         // Write your codes in here
+        
+        if(p == null) return (new PohonAVL(n));
+        
+        if(n < p.nilai) {
+            p.kiri = sisipkanTinggiSeimbang(n, p.kiri);
+        }
+        else if(n > p.nilai) p.kanan = sisipkanTinggiSeimbang(n, p.kanan);
+        else return p;
+        
     }
     
     // 7. hapusTinggiSeimbang() [20 points]
@@ -40,6 +56,15 @@ class DAA2 extends DAA1 {
 	// Write your codes in here
         //...
         // Write your codes in here
+        if(tinggi(p.kiri) <= (tinggi(p.kanan)+1)) return p;
+        else{
+            PohonAVL ki = p.kiri;
+            PohonAVL ka = p.kanan;
+            PohonAVL kiki = ki.kiri;
+            PohonAVL kika = ki.kanan;
+            if(tinggi(kiki) > tinggi(ka))
+                return sisipkanTinggiSeimbang(0, p)
+        }
     }
 
     private static PohonAVL seimbangkanKembaliKanan(PohonAVL p) {

@@ -25,7 +25,7 @@ public class DAA1 extends Pohon {
         // Write your codes in here     
         if (p == null)
             return true;
-        System.out.println(i + " " + p.nilai + " " + batasBawah + " " + batasAtas);
+//        System.out.println(i + " " + p.nilai + " " + batasBawah + " " + batasAtas);
         i+=1;
         
         if(p.nilai < batasBawah || p.nilai > batasAtas)
@@ -42,7 +42,9 @@ public class DAA1 extends Pohon {
         if(p == null) return;
         
         cetakMenurun(p.kanan);
-        System.out.print(" " + p.nilai);
+//        if(!p.adalahKosong()){
+            System.out.print(" " + p.nilai);            
+//         }
         cetakMenurun(p.kiri);
     }
 
@@ -62,12 +64,20 @@ public class DAA1 extends Pohon {
         // Write your codes in here
         //...
         // Write your codes in here
-        
-        if(p.kanan == null){
-            return p.nilai;
-        }else{
+        if(p.adalahKosong() || p.kanan != null){
+            System.out.println(p.kanan);
             return maks(p.kanan);
+        }else{
+            return p.nilai;
         }
+//        if(!p.adalahKosong()){
+//            if(p.kanan == null){
+//                return p.nilai;
+//            }else{ 
+//                return maks(p.kanan);
+//            }
+//        }
+//        return maks(p.kanan);
     }
 
     // 4. hapus() [10 points]
@@ -79,6 +89,7 @@ public class DAA1 extends Pohon {
         // Write your codes in here
         //...
         // Write your codes in here
+        
     }
 
 }

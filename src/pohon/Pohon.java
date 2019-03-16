@@ -13,6 +13,8 @@ public class Pohon {
      * cabang pohon ke kiri adalah kiri, cabang pohon ke kanan adalah kanan 
      */
     public Pohon (int n, Pohon kiri, Pohon kanan) {
+//        System.out.println(n);
+            System.out.println(kiri);
         this.kosong = false;
         this.nilai = n;
         this.kiri = kiri;
